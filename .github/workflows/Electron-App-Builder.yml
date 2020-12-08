@@ -10,36 +10,36 @@ jobs:
   build_on_Linux:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v2
-      name: Set-up Node.js
+      - uses: actions/checkout@v2
+      - name: Set-up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 14
-      name: Installing Node.js dependencies
-      run: npm ci
-      name: Start Electron App
-      run: npm start
+      - name: Installing Node.js dependencies
+      - run: npm ci
+      - name: Start Electron App
+      - run: npm start
   build_on_MacOS:
     runs-on: macos-latest
     steps:
-      uses: actions/checkout@v2
-      name: Set-up Node.js
+      - uses: actions/checkout@v2
+      - name: Set-up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 14
-      name: Installing Node.js dependencies
-      run: npm ci
-      name: Start Electron App
-      run: npm start
+      - name: Installing Node.js dependencies
+      - run: npm ci
+      - name: Start Electron App
+      - run: npm start
   build_on_Windows:
     runs-on: windows-latest
     steps:
-      uses: actions/checkout@v2
-      name: Set-up Node.js
+      - uses: actions/checkout@v2
+      - name: Set-up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 14
-      name: Installing Node.js dependencies
-      run: npm ci
-      name: Start Electron App
-      run: npm start
+      - name: Installing Node.js dependencies
+      - run: npm ci
+      - name: Start Electron App
+      - run: npm start
