@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: 14
     - name: Installing Node.js dependecies
-    - run: npm ci
+      run: npm ci
   # +----- BUILD -----+
   # | for Windows-x64 |
   # +-----------------+  
@@ -32,4 +32,4 @@ jobs:
       with:
         node-version: 14
     - name: Installing Node.js dependecies
-    - run: npm ci
+      run: npm ci
