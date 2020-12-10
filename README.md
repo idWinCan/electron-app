@@ -1,4 +1,5 @@
 # electron-quick-start
+![Electron App Builder](https://github.com/idWinCan/electron-app/workflows/Electron%20App%20Builder/badge.svg)
 
 **Clone and run for a quick way to see Electron in action.**
 
