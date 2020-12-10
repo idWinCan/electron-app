@@ -2,34 +2,128 @@ name: Electron App Builder
 
 on:
   push:
-    branches: [ master ]
+    branches: [master, main]
   pull_request:
-    branches: [ master ]
+    branches: [master, main]
 
-jobs: 
-  # +----- BUILD -----+
-  # | for Windows-x32 |
-  # +-----------------+
-  Build_for_Windows_x32:
-    runs-on: windows-latest
+jobs:
+
+  Build_Compile_for_Linux-32:
+    name: Build/Compile for Linux[32]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set-up Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 14
-    - name: Installing Node.js dependecies
+    - name: Installing Node.js dependencies
       run: npm ci
-  # +----- BUILD -----+
-  # | for Windows-x64 |
-  # +-----------------+  
-  Build_for_Windows_x64:
-    runs-on: windows-latest
+
+  Build_Compile_for_Linux-64:
+    name: Build/Compile for Linux[x64]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set-up Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 14
-    - name: Installing Node.js dependecies
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_Linux-ARM64:
+    name: Build/Compile for Linux[arm64]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_Linux-mips64el:
+    name: Build/Compile for Linux[mips64el]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_Linux-armv7l:
+    name: Build/Compile for Linux[armv7l]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_MacOS-64:
+    name: Build/Compile for MacOS[x64]
+    runs-on: MacOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci    
+
+  Build_Compile_for_MacOS-ARM64:
+    name: Build/Compile for MacOS[arm64]
+    runs-on: MacOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci     
+
+  Build_Compile_for_Win32:
+    name: Build/Compile for Win32
+    runs-on: Windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_Win64:
+    name: Build/Compile for Win64
+    runs-on: Windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+
+  Build_Compile_for_WinARM64:
+    name: Build/Compile for Win[arm64]
+    runs-on: Windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
       run: npm ci
