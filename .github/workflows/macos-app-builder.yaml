@@ -1,0 +1,33 @@
+name: MacAppBuilder
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  Mac64:
+    name: Build for Mac64
+    runs-on: macos-latest
+    steps:
+    - name: Initialize the repository
+      uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  ARM64:
+    name: Build for Mac/ARM64
+    runs-on: macos-latest
+    steps:
+    - name: Initialize the repository
+      uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci

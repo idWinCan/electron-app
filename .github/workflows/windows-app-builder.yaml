@@ -1,0 +1,45 @@
+name: WinAppBuilder
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  Win32:
+    name: Build for Win32
+    runs-on: windows-latest
+    steps:
+    - name: Initialize the repository
+      uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  Win64:
+    name: Build for Win64
+    runs-on: windows-latest
+    steps:
+    - name: Initialize the repository
+      uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  ARM64:
+    name: Build for Win/ARM64
+    runs-on: windows-latest
+    steps:
+    - name: Initialize the repository
+      uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
