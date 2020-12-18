@@ -1,0 +1,64 @@
+name: LinuxAppBuilder
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  x32:
+    name: Build for Linux/x32
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  x64:
+    name: Build for Linux/x64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  armv7l:
+    name: Build for Linux/armv7l
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  ARM64:
+    name: Build for Linux/ARM64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
+  mips64el:
+    name: Build for Linux/mips64el
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Installing Node.js dependencies
+      run: npm ci
